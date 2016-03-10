@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -85,6 +86,22 @@ public class DragAndDropActivity extends AppCompatActivity {
         });
 
         queueView.setOnLongClickListener(new LongClickListener());
+
+        queueView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                ClipData.Item item = new ClipData.Item((CharSequence)view.getTag());
+
+                String[] mimeTypes = { ClipDescription.MIMETYPE_TEXT_PLAIN };
+                ClipData data = new ClipData(view.getTag().toString(), mimeTypes, item);
+                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
+
+                view.startDrag(data, shadowBuilder, view, 0);
+
+                view.setVisibility(View.INVISIBLE);
+                return true;
+            }
+        });
     }
 
     private int generateNumber(){
@@ -125,6 +142,7 @@ public class DragAndDropActivity extends AppCompatActivity {
     private void updateYourWrongScore() {
         yourWrongScore.setText(wrongScore+"");
     }
+
 
     private final class LongClickListener implements View.OnLongClickListener {
 

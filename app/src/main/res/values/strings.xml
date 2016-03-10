@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Drag And Drop</string>
+
+    <string name="is_it_odd">Is It Odd Number?</string>
+    <string name="is_it_even">Is It Even Number?</string>
+
+    <string name="correct_count">Correct answers count:\u0020</string>
+    <string name="wrong_count">Wrong answers count:\u0020</string>
+
+    <string name="info">Long press number, drag &amp; drop</string>
+
+    <string name="new_line"><![CDATA[Is It Odd Number? \n
+        drag & drop here.]]> </string>
+
+</resources>

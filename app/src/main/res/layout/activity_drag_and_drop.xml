@@ -55,6 +55,17 @@
                         android:src="@drawable/wrong"
                         android:visibility="invisible" />
 
+                    <TextView
+                        android:id="@+id/odd_plus_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:paddingBottom="20dp"
+                        android:text="+1"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black"
+                        android:visibility="invisible"/>
+
                 </FrameLayout>
 
                 <View
@@ -93,6 +104,17 @@
                         android:paddingTop="5dp"
                         android:src="@drawable/wrong"
                         android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/even_plus_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:paddingBottom="20dp"
+                        android:text="+1"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black"
+                        android:visibility="invisible"/>
 
                 </FrameLayout>
 

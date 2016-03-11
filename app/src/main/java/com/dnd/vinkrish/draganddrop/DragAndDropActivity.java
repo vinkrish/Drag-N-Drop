@@ -12,6 +12,7 @@ import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -27,7 +28,7 @@ public class DragAndDropActivity extends AppCompatActivity {
     private FrameLayout podium;
     private TextView queueView;
     private int score, wrongScore;
-    private TextView yourScore, yourWrongScore;
+    private TextView yourScore, yourWrongScore, oddPlusOne, evenPlusOne;
     private ImageView oddTick, oddWrong, evenTick, evenWrong;
 
     @Override
@@ -52,6 +53,9 @@ public class DragAndDropActivity extends AppCompatActivity {
         podium = (FrameLayout) findViewById(R.id.podium);
         yourScore = (TextView) findViewById(R.id.your_score);
         yourWrongScore = (TextView) findViewById(R.id.your_wrong_score);
+
+        oddPlusOne = (TextView) findViewById(R.id.odd_plus_one);
+        evenPlusOne = (TextView) findViewById(R.id.even_plus_one);
 
         oddTick = (ImageView) findViewById(R.id.odd_tick);
         oddWrong = (ImageView) findViewById(R.id.odd_wrong);
@@ -199,6 +203,7 @@ public class DragAndDropActivity extends AppCompatActivity {
 
                         if (isItOdd()) {
                             AnimationUtil.alphaScaleInOut(oddTick, getApplicationContext());
+                            AnimationUtil.alphaInOut(oddPlusOne, getApplicationContext());
                             score++;
                             updateYourScore();
                         } else {
@@ -221,6 +226,7 @@ public class DragAndDropActivity extends AppCompatActivity {
 
                         if (isItEven()) {
                             AnimationUtil.alphaScaleInOut(evenTick, getApplicationContext());
+                            AnimationUtil.alphaInOut(evenPlusOne, getApplicationContext());
                             score++;
                             updateYourScore();
                         } else {

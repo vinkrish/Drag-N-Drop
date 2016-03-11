@@ -54,6 +54,16 @@ public class AnimationUtil {
 
     }
 
+    public static void alphaInOut(View view, Context context) {
+        AnimationSet animationSet = new AnimationSet(context , null);
+        AlphaAnimation fadeIn = new AlphaAnimation(0.5f, 1f);
+        AlphaAnimation fadeOut = new AlphaAnimation(1f, 0f);
+        animationSet.addAnimation(fadeIn);
+        animationSet.addAnimation(fadeOut);
+        animationSet.setDuration(1000);
+        view.startAnimation(animationSet);
+    }
+
 
 
 }

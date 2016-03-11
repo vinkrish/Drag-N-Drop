@@ -7,7 +7,7 @@
     <string name="correct_count">Correct answers count:\u0020</string>
     <string name="wrong_count">Wrong answers count:\u0020</string>
 
-    <string name="info">Long press number, drag &amp; drop</string>
+    <string name="info">Click / Touch number &amp; start dragging it</string>
 
     <string name="new_line"><![CDATA[Is It Odd Number? \n
         drag & drop here.]]> </string>
